@@ -18,7 +18,7 @@ ui <- fluidPage(
             ),
           wellPanel(
             uiOutput("ui_select_clients")
-            )
+            ),
           ),
         mainPanel(
           DT::dataTableOutput(outputId = "events_table_output")
@@ -44,7 +44,10 @@ ui <- fluidPage(
                         value = 10, step = 1),
             numericInput(inputId = "head_param", label = "Show lift top n:", 
                          value =  20, min = 10, step = 1)
-            )
+            ),
+          wellPanel(
+            downloadButton(outputId = "download_mba", label = "Download Results"),
+          )
           ),
         mainPanel(
           DT::dataTableOutput(outputId = "inspect_rules")
@@ -110,8 +113,7 @@ server <- function(input, output, session) {
   })
   
  
-  output$inspect_rules <- DT::renderDataTable({
-    
+  process_results <- reactive({
     quiet <- function(x) { 
       sink(tempfile()) 
       on.exit(sink()) 
@@ -127,6 +129,22 @@ server <- function(input, output, session) {
       .[1:head_n] %>% 
       as(., "data.frame")
   })
+  
+  output$inspect_rules <- DT::renderDataTable({
+    process_results()
+  })
+  
+  
+  output$download_mba <- downloadHandler(
+    
+    filename = function(){
+      paste0("Market_Basket_Analysis_", format(Sys.time(), "%Y-%b-%d"),".csv")
+    },
+    content = function(file) {
+      data <- process_results()
+      write.csv(data, file, row.names = FALSE, fileEncoding = "UTF-8")
+    }
+  )
   
 }
 

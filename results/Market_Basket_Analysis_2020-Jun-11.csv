@@ -1,0 +1,21 @@
+"rules","support","confidence","coverage","lift","count"
+"{task__created_at_changed,task__priority_changed_at_changed} => {task__priority_changed}",0.0538107202680067,0.945548197203826,0.0569095477386935,11.0414136671038,1285
+"{task__priority_changed} => {task__priority_changed_at_changed}",0.0856365159128978,1,0.0856365159128978,10.2886686772943,2045
+"{task__priority_changed_at_changed} => {task__priority_changed}",0.0856365159128978,0.881085738905644,0.0971943048576214,10.2886686772943,2045
+"{task__created_at_changed,task__priority_changed} => {task__priority_changed_at_changed}",0.0538107202680067,1,0.0538107202680067,10.2886686772943,1285
+"{task__completed_at_changed,task__priority_changed} => {task__priority_changed_at_changed}",0.0523450586264657,1,0.0523450586264657,10.2886686772943,1250
+"{task__in_progress_at_changed,task__priority_changed} => {task__priority_changed_at_changed}",0.0647822445561139,1,0.0647822445561139,10.2886686772943,1547
+"{task__completed_at_changed,task__priority_changed_at_changed} => {task__priority_changed}",0.0523450586264657,0.874737578726382,0.0598408710217755,10.2145395501154,1250
+"{task__in_progress_at_changed,task__priority_changed_at_changed} => {task__priority_changed}",0.0647822445561139,0.872040586245772,0.0742881072026801,10.1830460633492,1547
+"{task__created_at_changed,task__in_progress_at_changed} => {task__due_at_changed}",0.0502931323283082,0.309855521155831,0.162311557788945,2.50655482561018,1201
+"{task__completed_at_changed,task__priority_changed_at_changed} => {task__in_progress_at_changed}",0.0548994974874372,0.91742477256823,0.0598408710217755,2.39302059737076,1311
+"{task__completed_at_changed,task__created_at_changed} => {task__in_progress_at_changed}",0.125544388609715,0.898411747078214,0.139740368509213,2.34342681815705,2998
+"{task__due_at_changed,task__in_progress_at_changed} => {task__completed_at_changed}",0.0657035175879397,0.784892446223112,0.0837102177554439,2.33589626318643,1569
+"{task__completed_at_changed,task__due_at_changed} => {task__in_progress_at_changed}",0.0657035175879397,0.892999430848036,0.0735762144053601,2.32930927456593,1569
+"{task__created_at_changed,task__in_progress_at_changed} => {task__completed_at_changed}",0.125544388609715,0.773477812177503,0.162311557788945,2.30192549287123,2998
+"{task__completed_at_changed} => {task__in_progress_at_changed}",0.288400335008375,0.858300099700897,0.336013400335008,2.2387991677616,6887
+"{task__in_progress_at_changed} => {task__completed_at_changed}",0.288400335008375,0.752266521026761,0.383375209380235,2.2387991677616,6887
+"{task__title_changed} => {task__created_at_changed}",0.0541457286432161,0.69144385026738,0.0783082077051926,2.20803411933472,1293
+"{task__in_progress_at_changed,task__priority_changed_at_changed} => {task__completed_at_changed}",0.0548994974874372,0.739007891770011,0.0742881072026801,2.1993405353275,1311
+"{task__priority_changed} => {task__created_at_changed}",0.0538107202680067,0.628361858190709,0.0856365159128978,2.00659015426506,1285
+"{task__priority_changed,task__priority_changed_at_changed} => {task__created_at_changed}",0.0538107202680067,0.628361858190709,0.0856365159128978,2.00659015426506,1285
